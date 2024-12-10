@@ -1,53 +1,86 @@
- {
+/* Global reset */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
 }
+
 .card {
   width: 100%;
   max-width: 460px;
   background-image: url("/img/sky.jpg");
-  background-repeat: ;
-  margin: 100px auto 0;
+  background-size: cover;
+  background-position: center;
+  margin: 100px auto;
   border-radius: 20px;
   padding: 40px 35px;
   text-align: center;
+  color: white;
 }
-h2 {
-  position: absolute;
-  left: 1;
-  top: 100px;
+
+h1 {
+  font-size: 4em;
+  font-weight: bold;
 }
+
 h3 {
-  position: absolute;
-  top: 170px;
+  font-size: 1.5em;
+  margin-top: 10px;
 }
+
 .input {
-  position: absolute;
-  top: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
+
+.input input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.input button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+h5 {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
 li {
   list-style: none;
+  font-size: 1.5em;
 }
-.cap {
-  position: absolute;
-  left: 850px;
-  top: 130px;
+
+footer {
+  margin-top: 30px;
+  font-size: 0.9em;
 }
-.cup {
-  position: absolute;
-  left: 850px;
-  top: 180px;
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
 }
-.mug {
-  position: absolute;
-  left: 850px;
-  top: 220px;
-}
-.jug {
-  position: absolute;
-  left: 850px;
-  top: 260px;
+
+footer a:hover {
+  text-decoration: underline;
 }
