@@ -9,7 +9,7 @@ body {
   width: 100%;
   max-width: 460px;
   background-image: url("/img/sky.jpg");
-  background-repeat: cover;
+  background-repeat: ;
   margin: 100px auto 0;
   border-radius: 20px;
   padding: 40px 35px;
@@ -19,6 +19,14 @@ h2 {
   position: absolute;
   left: 1;
   top: 100px;
+}
+h3 {
+  position: absolute;
+  top: 170px;
+}
+.input {
+  position: absolute;
+  top: 190px;
 }
 li {
   list-style: none;
