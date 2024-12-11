@@ -1,10 +1,3 @@
 [build]
-command="npm run build"
-public="/build"
-base="/"
-
-
-[[redirects]]
-from ="/*"
-to="/GIT.html"
-status=200
+  publish = "/"
+  command = "echo 'No build step required'"
