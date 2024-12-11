@@ -1,4 +1,4 @@
 [[redirects]]
-from="/*"
-to="/wim.html
-status=200
+  from = "/*"
+  to = "/wim.html"
+  status = 200
