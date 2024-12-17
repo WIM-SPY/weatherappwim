@@ -1,10 +1,16 @@
 {
-  "name": "your-project-name",
+  "name": "weather-app",
   "version": "1.0.0",
+  "description": "",
+  "main": "wim.html",
   "scripts": {
-    "build": "react-scripts build"  
+    "start": "parcel wim.html --open",
+    "build": "parcel build wim.html"
   },
-  "dependencies": {
-
-  }
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": []
 }
