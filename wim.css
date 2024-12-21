@@ -8,6 +8,9 @@ body {
   font-family: Arial, sans-serif;
   background-image: url("/img/sky1.jpg");
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .card {
@@ -21,6 +24,7 @@ body {
   padding: 40px 35px;
   text-align: center;
   color: white;
+  flex-grow: 1;
 }
 
 h1 {
@@ -66,18 +70,29 @@ ul {
   margin-top: 40px;
 }
 
-li {
-  list-style: none;
-  font-size: 1.5em;
+.weather-results {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.weather-date {
+  text-align: center;
 }
 
 footer {
   margin-top: 30px;
   font-size: 0.9em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
 }
 
 footer a {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 

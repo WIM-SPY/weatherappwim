@@ -7,16 +7,63 @@ function currentWeather(response) {
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML =
     Math.round(response.data.temperature.current) + "°C";
-
   humidityElement.innerHTML = `Humidity: ${response.data.temperature.humidity}%`;
   windElement.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
 }
 
+function getForecast(city) {
+  let apiKey = "o523c31a2f220c8ate5394b887be36b3";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  let forecastHtml = "";
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml += `
+        <div class="weather-forecast-day">
+          <div class="weather-forecast-date">${formatDay(day.time)}</div>
+          <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
+          <div class="weather-forecast-temperatures">
+            <div class="weather-forecast-temperature">
+              <strong>${Math.round(day.temperature.maximum)}°C</strong>
+            </div>
+            <div class="weather-forecast-temperature">${Math.round(
+              day.temperature.minimum
+            )}°C</div>
+          </div>
+        </div>
+      `;
+    }
+  });
+
+  document.querySelector("#results").innerHTML = forecastHtml;
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[date.getDay()];
+}
+
 function searchCity(city) {
   let apiKey = "o523c31a2f220c8ate5394b887be36b3";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(currentWeather);
+  getForecast(city);
+  t;
 }
 
 function displayCurrentDateTime() {
@@ -38,7 +85,6 @@ function displayCurrentDateTime() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Handle search form submit
   function handleSearchSubmit(event) {
     event.preventDefault();
 
@@ -58,6 +104,5 @@ document.addEventListener("DOMContentLoaded", function () {
   searchCity("Mbombela");
 
   displayCurrentDateTime();
-
   setInterval(displayCurrentDateTime, 1000);
 });
